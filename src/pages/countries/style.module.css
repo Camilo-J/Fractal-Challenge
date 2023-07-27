@@ -1,0 +1,23 @@
+.countriesContainer {
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.paginationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+.button--active {
+  background-color: #2b3945;
+  color: #fff;
+}
