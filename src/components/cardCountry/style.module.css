@@ -5,10 +5,17 @@
   border-radius: 2rem;
   background-color: #fff;
   color: #000;
+  transition: transform 0.3s ease-in-out;
 }
+
+.cardContainer:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 .mainImage {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   height: 9.625rem;
   width: 100%;
   object-fit: cover;
@@ -33,5 +40,5 @@
 .cardBody__content p {
   color: #676363;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 }
