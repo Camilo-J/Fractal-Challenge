@@ -3,13 +3,23 @@ import styles from "./style.module.css";
 import search from "../../../public/search.svg";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import { Filter } from "../filterCountry/filter";
 
-export function Input() {
+type InputProps = {
+  onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
+};
+
+export function Input({ onFilters }: InputProps) {
   const [_searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState("");
+  const [filter, setFilter] = useState(false);
 
   function searchCountries() {
     setSearchParams(`query=${inputValue}`);
+  }
+
+  function filterCountries() {
+    setFilter(!filter);
   }
 
   return (
@@ -30,6 +40,9 @@ export function Input() {
           placeholder="Escribe el pais que desear ver"
         />
       </div>
+      <button onClick={filterCountries} className={styles.containerFilter}>
+        <img className={styles.filterIcon} src="public/filter.svg" alt="" />
+      </button>
       <button
         className={styles.inputContainer__button}
         onClick={searchCountries}
@@ -37,6 +50,7 @@ export function Input() {
         <img className={styles.button__icon} src={search} alt="" />
         Buscar
       </button>
+      {filter && <Filter onFilters={onFilters} />}
     </div>
   );
 }
