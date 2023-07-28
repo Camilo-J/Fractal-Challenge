@@ -70,7 +70,12 @@ export function Countries() {
     }
 
     if (clean) {
-      const newFilter = filter.filter((item) => item !== params);
+      const filterData = params.split(" ");
+      const newFilter = filter.filter((item) => {
+        if (filterData.length === 1) return item !== params;
+        if (filterData.length === 2)
+          return item !== filterData[0] && item !== filterData[1];
+      });
       setFilter(newFilter);
       return;
     }
