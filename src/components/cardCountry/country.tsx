@@ -1,17 +1,21 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { getPhotoCountry } from "../../services/pixabay";
+import { useSearchParams } from "react-router-dom";
+
 type CardCountryProps = {
+  code: string;
   name: string;
   continent: { name: string };
 };
 
-export function CardCountry({ name, continent }: CardCountryProps) {
+export function CardCountry({ code, name, continent }: CardCountryProps) {
   const [countryImage, setCountryImage] = useState({
     country: "",
     flag: "",
   });
-
+  const [_searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     getPhotoCountry(name).then((data) => {
       setCountryImage({
@@ -21,8 +25,14 @@ export function CardCountry({ name, continent }: CardCountryProps) {
     });
   }, [name]);
 
+  function showInfo() {
+    setSearchParams(
+      `country=${code}&image=${countryImage.country}&flag=${countryImage.flag}`
+    );
+  }
+
   return (
-    <div className={styles.cardContainer}>
+    <div onClick={showInfo} className={styles.cardContainer}>
       <img className={styles.mainImage} src={countryImage.country} alt="" />
       <div className={styles.cardBody}>
         <img className={styles.cardBody__Flag} src={countryImage.flag} alt="" />
