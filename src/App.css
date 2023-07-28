@@ -1,6 +1,22 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  background-color: #e3f4ff;
+}
+
+.navbarIcon {
+  z-index: 10;
+  display: none;
+  position: relative;
+  width: 45px;
+  left: 1rem;
+  margin-top: 2.5rem;
+  align-self: flex-start;
+  cursor: pointer;
+}
+@media screen and (max-width: 970px) {
+  .navbarIcon {
+    display: block;
+  }
 }

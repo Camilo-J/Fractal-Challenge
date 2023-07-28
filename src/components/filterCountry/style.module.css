@@ -37,3 +37,13 @@
   padding: 0.8rem 0;
   gap: 1.3rem;
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 400px;
+  }
+  .container__content {
+    justify-content: center;
+    gap: 0.6rem;
+  }
+}
