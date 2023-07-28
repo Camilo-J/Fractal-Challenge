@@ -2,6 +2,11 @@ import { useState } from "react";
 import { FilterOption } from "./filterOption";
 import styles from "./style.module.css";
 import { FilterProps } from "../../types/types";
+import oceania from "../../../public/oceania.png";
+import america from "../../../public/america.jpg";
+import africa from "../../../public/africa.jpg";
+import asia from "../../../public/asia.jpg";
+import europa from "../../../public/europa.png";
 
 export function Filter({ onFilters }: FilterProps) {
   const [cleanFilters, setCleanFilters] = useState(false);
@@ -24,35 +29,35 @@ export function Filter({ onFilters }: FilterProps) {
           clean={cleanFilters}
           name="Oceania"
           code="OC"
-          image="public/oceania.png"
+          image={oceania}
         />
         <FilterOption
           onFilters={onFilters}
           clean={cleanFilters}
           name="America"
           code="NA SA"
-          image="public/america.jpg"
+          image={america}
         />
         <FilterOption
           onFilters={onFilters}
           clean={cleanFilters}
           name="Asia"
           code="AS"
-          image="public/asia.jpg"
+          image={asia}
         />
         <FilterOption
           onFilters={onFilters}
           clean={cleanFilters}
           name="Europa"
           code="EU"
-          image="public/europa.png"
+          image={europa}
         />
         <FilterOption
           onFilters={onFilters}
           clean={cleanFilters}
           name="Africa"
           code="AF"
-          image="public/africa.jpg"
+          image={africa}
         />
       </div>
     </div>

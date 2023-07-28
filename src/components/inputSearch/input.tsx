@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "./style.module.css";
 import search from "../../../public/search.svg";
+import filterImage from "../../../public/filter.svg";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { Filter } from "../filterCountry/filter";
@@ -38,7 +39,7 @@ export function Input({ onFilters }: InputProps) {
         />
       </div>
       <button onClick={filterCountries} className={styles.containerFilter}>
-        <img className={styles.filterIcon} src="public/filter.svg" alt="" />
+        <img className={styles.filterIcon} src={filterImage} alt="" />
       </button>
       <button
         className={styles.inputContainer__button}

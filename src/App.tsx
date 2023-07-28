@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { SideBar } from "./components/sidebar/sidebar";
 import { Countries } from "./pages/countries/countries";
 import { useState } from "react";
+import navbarIcon from "../public/navbar.svg";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ function App() {
       <img
         onClick={handleOpen}
         className="navbarIcon"
-        src="public/navbar.svg"
+        src={navbarIcon}
         alt=""
       />
       <SideBar open={open} />
