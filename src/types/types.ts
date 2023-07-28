@@ -2,6 +2,7 @@ export type FilterOptionProps = {
   name: string;
   code: string;
   clean?: boolean;
+  image?: string;
   onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
 };
 

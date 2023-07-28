@@ -6,6 +6,7 @@ export function FilterOption({
   name,
   clean,
   code,
+  image,
   onFilters,
 }: FilterOptionProps) {
   const state: FilterOptionState | null = JSON.parse(
@@ -35,7 +36,7 @@ export function FilterOption({
       }`}
       onClick={onSelected}
     >
-      <img src="public/palace-gd74aed6eb_1280.jpg" alt="continent" />
+      <img src={image || ""} alt="continent" />
       <p>{name}</p>
     </div>
   );
