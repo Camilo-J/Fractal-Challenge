@@ -32,13 +32,13 @@
 }
 
 .cardBody__content h3 {
-  color: rgb(6, 52, 236);
+  color: #009cff;
   font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
 .cardBody__content p {
-  color: #676363;
+  color: #7f7f7f;
   font-size: 1rem;
   font-weight: 400;
 }
