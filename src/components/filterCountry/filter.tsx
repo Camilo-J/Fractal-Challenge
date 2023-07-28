@@ -9,6 +9,7 @@ export function Filter({ onFilters }: FilterProps) {
 
   function onCleaned() {
     setCleanFilters(!cleanFilters);
+    localStorage.setItem("filters", JSON.stringify({}));
     onFilters("", false, true);
   }
 

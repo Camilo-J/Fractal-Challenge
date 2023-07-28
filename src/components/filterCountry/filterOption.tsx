@@ -8,16 +8,29 @@ type FilterOptionProps = {
   onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
 };
 
+type FilterOptionState = {
+  [key: string]: boolean;
+};
+
 export function FilterOption({
   name,
   clean,
   code,
   onFilters,
 }: FilterOptionProps) {
-  const [selected, setSelected] = useState(false);
+  const state: FilterOptionState | null = JSON.parse(
+    localStorage.getItem("filters") || "{}"
+  );
+  const [selected, setSelected] = useState(
+    (state && state[`${code}`]) || false
+  );
 
   function onSelected() {
     setSelected(!selected);
+    localStorage.setItem(
+      "filters",
+      JSON.stringify({ ...state, [code]: !selected })
+    );
     onFilters(code, selected, false);
   }
 
