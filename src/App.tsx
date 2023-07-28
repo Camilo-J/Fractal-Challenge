@@ -1,31 +1,18 @@
 import "./App.css";
-import { gql, useQuery } from "@apollo/client";
-import { Routes } from "react-router-dom";
-
-const query = gql`
-  query Query {
-    country(code: "BR") {
-      name
-      native
-      capital
-      emoji
-      currency
-      languages {
-        code
-        name
-      }
-    }
-  }
-`;
+import { Route, Routes } from "react-router-dom";
+import { SideBar } from "./components/sidebar/sidebar";
+import { Countries } from "./pages/countries/countries";
 
 function App() {
-  const result = useQuery(query);
-  console.log(result);
   return (
-    <section>
-      <p>dasd</p>
-      <div className="maincontainer">
-        <Routes></Routes>
+    <section className="container">
+      <SideBar />
+      <div className="container__pages">
+        <Routes>
+          <Route path="/countries" element={<Countries />} />
+          <Route path="/" element={<Countries />} />
+          <Route path="*" element={<Countries />} />
+        </Routes>
       </div>
     </section>
   );
