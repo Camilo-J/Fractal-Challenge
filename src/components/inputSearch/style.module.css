@@ -1,4 +1,5 @@
 .inputContainer {
+  position: relative;
   box-sizing: border-box;
   width: 700px;
   height: 70px;
@@ -47,6 +48,15 @@
   background-color: #0086e6;
 }
 
-.button__icon {
+.containerFilter {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__icon,
+.filterIcon {
   width: 30px;
 }
