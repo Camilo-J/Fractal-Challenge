@@ -1,46 +1,73 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { gql, useQuery } from "@apollo/client";
 import styles from "./style.module.css";
+import { useSearchParams } from "react-router-dom";
+
+const GET_COUNTRY = gql`
+  query Country($code: ID!) {
+    country(code: $code) {
+      name
+      capital
+      languages {
+        name
+      }
+      continent {
+        name
+      }
+      states {
+        name
+      }
+      currencies
+    }
+  }
+`;
 
 export function InfoCountry() {
+  const [searchParams, _setSearchParams] = useSearchParams();
+  const selectedCountry = searchParams.get("country");
+  const image = searchParams.get("image");
+  const flag = searchParams.get("flag");
+  const { data } = useQuery(GET_COUNTRY, {
+    variables: { code: `${selectedCountry}` },
+  });
+
   return (
     <div className={styles.infoContainer}>
-      <img
-        className={styles.infoCountry__img}
-        src="https://pixabay.com/get/g124e00b23acc39b80221f04e26b03a6f131ae8080a8bf5514156c3bd3bfd7dce49614c3beda5e30a0d5bb2d703b09cddb852659ac96c3bda7a40d98be3b0dcce_640.jpg"
-        alt=""
-      />
+      <img className={styles.infoCountry__img} src={image || ""} alt="" />
       <div>
         <div className={styles.cardBody}>
-          <img
-            className={styles.cardBody__Flag}
-            src="https://pixabay.com/get/g124e00b23acc39b80221f04e26b03a6f131ae8080a8bf5514156c3bd3bfd7dce49614c3beda5e30a0d5bb2d703b09cddb852659ac96c3bda7a40d98be3b0dcce_640.jpg"
-            alt=""
-          />
+          <img className={styles.cardBody__Flag} src={flag || ""} alt="" />
           <div className={styles.cardBody__content}>
-            <h3>United Kingdom</h3>
-            <p>Europe</p>
+            <h3>{data?.country.name}</h3>
+            <p>{data?.country.continent.name}</p>
           </div>
         </div>
         <div className={styles.containerContent}>
           <p className={styles.cardContent__p}>
             Capital: &nbsp; &nbsp;
-            <span>London</span>
+            <span>{data?.country.capital ?? "----"}</span>
           </p>
           <p className={styles.cardContent__p}>
-            Language: &nbsp; &nbsp; <span>English</span>
+            Language: &nbsp; &nbsp;
+            <span>{data?.country.languages[0]?.name ?? "----"}</span>
           </p>
           <p className={styles.cardContent__p}>
             Population: &nbsp;<span>500k People</span>
           </p>
           <p className={styles.cardContent__p}>
-            Currency: &nbsp; &nbsp; <span>Euro, Dollar</span>
+            Currency: &nbsp; &nbsp;
+            <span>
+              {data?.country.currencies[0] ?? "----"},
+              {data?.country.currencies[1] ?? "----"}
+            </span>
           </p>
           <div className={styles.containerRegion}>
             <p className={styles.cardContent__p}>Region:</p>
             <div className={styles.containerRegion__regions}>
-              <p>Santa Cruz</p>
-              <p>Cordova</p>
-              <p>Jujuy</p>
-              <p>Tucuman</p>
+              <p>{data?.country?.states[0]?.name ?? "No Region"}</p>
+              <p>{data?.country?.states[1]?.name ?? "No Region"}</p>
+              <p>{data?.country?.states[2]?.name ?? "No Region"}</p>
+              <p>{data?.country?.states[3]?.name ?? "No Region"}</p>
             </div>
           </div>
         </div>
