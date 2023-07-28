@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { getPhotoCountry } from "../../services/pixabay";
 import { useSearchParams } from "react-router-dom";
-
-type CardCountryProps = {
-  code: string;
-  name: string;
-  continent: { name: string };
-};
+import { CardCountryProps } from "../../types/types";
 
 export function CardCountry({ code, name, continent }: CardCountryProps) {
   const [countryImage, setCountryImage] = useState({

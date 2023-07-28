@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { FilterOption } from "./filterOption";
 import styles from "./style.module.css";
-type FilterProps = {
-  onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
-};
+import { FilterProps } from "../../types/types";
+
 export function Filter({ onFilters }: FilterProps) {
   const [cleanFilters, setCleanFilters] = useState(false);
 

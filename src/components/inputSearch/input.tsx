@@ -4,10 +4,7 @@ import search from "../../../public/search.svg";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { Filter } from "../filterCountry/filter";
-
-type InputProps = {
-  onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
-};
+import { InputProps } from "../../types/types";
 
 export function Input({ onFilters }: InputProps) {
   const [_searchParams, setSearchParams] = useSearchParams();

@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./filterOption.module.css";
-
-type FilterOptionProps = {
-  name: string;
-  code: string;
-  clean?: boolean;
-  onFilters: (params: string, clean: boolean, cleanAll: boolean) => void;
-};
-
-type FilterOptionState = {
-  [key: string]: boolean;
-};
+import { FilterOptionProps, FilterOptionState } from "../../types/types";
 
 export function FilterOption({
   name,
