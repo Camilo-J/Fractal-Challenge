@@ -1,0 +1,14 @@
+.paginationContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.button--active {
+  background-color: #2b3945;
+  color: #fff;
+}
