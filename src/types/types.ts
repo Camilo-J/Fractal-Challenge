@@ -26,3 +26,31 @@ export type SideLinkProps = {
   to: string;
   name: string;
 };
+
+export enum ContinentName {
+  asia = "AS",
+  america = "NA SA",
+  africa = "AF",
+  europe = "EU",
+  oceania = "OC",
+  antarctica = "AN",
+}
+
+export type Country = {
+  code: string;
+  name: string;
+  continent: { name: string; code?: string };
+};
+
+export type AccumulatorType = {
+  [key: number]: Country[];
+};
+
+export type DataCountriesResponse = {
+  countries: Country[];
+};
+
+export type GraphQLResponseCountries = {
+  called?: boolean;
+  data: DataCountriesResponse;
+};
