@@ -21,7 +21,7 @@ function App() {
         src={navbarIcon}
         alt=""
       />
-      <SideBar open={open} />
+      <SideBar open={open} handleOpen={handleOpen} />
       <div className="container__pages">
         <Routes>
           <Route path="/" element={<Countries />} />
