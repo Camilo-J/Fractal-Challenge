@@ -13,12 +13,23 @@
   gap: 1rem;
 }
 
+.iconClose {
+  display: none;
+  width: 40px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 970px) {
   .sidebar {
-    position: absolute;
+    position: fixed;
     left: -100%;
+    width: 100%;
   }
   .sidebar--Open {
     left: 0;
+  }
+  .iconClose {
+    display: block;
   }
 }
