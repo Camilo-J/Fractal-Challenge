@@ -13,7 +13,9 @@ export function PaginationSection({
     <div className={styles.paginationContainer}>
       {[...Array(pageNumber)].map((_x, index) => (
         <button
-          className={`${page === index + 1 ? styles["button--active"] : ""}`}
+          className={`${styles.paginationContainer__button} ${
+            page === index + 1 ? styles["button--active"] : ""
+          }`}
           onClick={() => handlePage(index)}
           key={index}
         >

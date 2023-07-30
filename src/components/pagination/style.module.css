@@ -8,7 +8,15 @@
   margin-top: 1rem;
 }
 
+.paginationContainer__button {
+  all: unset;
+  border-radius: 1rem;
+  background-color: #009cff;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+}
+
 .button--active {
-  background-color: #2b3945;
+  background-color: #075da9;
   color: #fff;
 }
