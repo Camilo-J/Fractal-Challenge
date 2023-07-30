@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "./style.module.css";
-import search from "../../assets/search.svg";
-import filterImage from ".../../assets/filter.svg";
+import search from "../../../public/search.svg";
+import filterImage from "../../../public/filter.svg";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { Filter } from "../filterCountry/filter";

@@ -2,11 +2,11 @@ import { useState } from "react";
 import { FilterOption } from "./filterOption";
 import styles from "./style.module.css";
 import { FilterProps } from "../../types/types";
-import oceania from "../../assets/oceania.png";
-import america from "../../assets/america.jpg";
-import africa from "../../assets/africa.jpg";
-import asia from "../../assets/asia.jpg";
-import europa from "../../assets/europa.png";
+import oceania from "../../../public/oceania.png";
+import america from "../../../public/america.jpg";
+import africa from "../../../public/africa.jpg";
+import asia from "../../../public/asia.jpg";
+import europa from "../../../public/europa.png";
 
 export function Filter({ onFilters }: FilterProps) {
   const [cleanFilters, setCleanFilters] = useState(false);
