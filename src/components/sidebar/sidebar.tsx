@@ -1,6 +1,6 @@
 import { SideLink } from "../navlink/navlink";
 import styles from "./style.module.css";
-import closeSvg from "../../../public/close.svg";
+import closeSvg from "../../assets/close.svg";
 export function SideBar({
   open,
   handleOpen,
