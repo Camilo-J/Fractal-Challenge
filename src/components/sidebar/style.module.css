@@ -1,4 +1,5 @@
 .sidebar {
+  z-index: 10;
   background-color: #676767;
   min-height: 100vh;
   width: 18rem;
@@ -20,7 +21,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 1024px) {
   .sidebar {
     position: fixed;
     left: -100%;
