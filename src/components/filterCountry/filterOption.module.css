@@ -19,7 +19,7 @@
   margin-top: 0.3rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 728px) {
   .containerContinent img {
     width: 110px;
     height: 90px;
