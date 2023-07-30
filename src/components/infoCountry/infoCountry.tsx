@@ -2,7 +2,7 @@
 import { gql, useQuery } from "@apollo/client";
 import styles from "./style.module.css";
 import { useSearchParams } from "react-router-dom";
-
+import closeIcon from "../../../public/closeBlack.svg";
 const GET_COUNTRY = gql`
   query Country($code: ID!) {
     country(code: $code) {
@@ -23,7 +23,7 @@ const GET_COUNTRY = gql`
 `;
 
 export function InfoCountry() {
-  const [searchParams, _setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const selectedCountry = searchParams.get("country");
   const image = searchParams.get("image");
   const flag = searchParams.get("flag");
@@ -31,8 +31,18 @@ export function InfoCountry() {
     variables: { code: `${selectedCountry}` },
   });
 
+  function closeInfo() {
+    setSearchParams();
+  }
+
   return (
     <div className={styles.infoContainer}>
+      <img
+        className={styles.closeIcon}
+        src={closeIcon}
+        alt="close-icon-info-country"
+        onClick={closeInfo}
+      />
       <img className={styles.infoCountry__img} src={image || ""} alt="" />
       <div>
         <div className={styles.cardBody}>
