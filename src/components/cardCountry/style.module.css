@@ -42,3 +42,18 @@
   font-size: 1rem;
   font-weight: 400;
 }
+@media screen and (min-width: 430px) and (max-width: 728px) {
+  .cardContainer {
+    width: 250px;
+    height: 200px;
+  }
+  .mainImage {
+    height: 63%;
+  }
+  .cardBody__content h3 {
+    font-size: 1.1rem;
+  }
+  .cardBody__content p {
+    font-size: 0.9rem;
+  }
+}
