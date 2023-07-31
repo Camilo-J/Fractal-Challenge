@@ -37,11 +37,6 @@
   background-color: #2b3945;
   color: #fff;
 }
-@media screen and (min-width: 1024px) {
-  .wrapped {
-    min-width: 1230px;
-  }
-}
 
 @media screen and (max-width: 500px) {
   .wrapped {
