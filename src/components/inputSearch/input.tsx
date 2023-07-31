@@ -36,6 +36,7 @@ export function Input({ onFilters }: InputProps) {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Escribe el pais que desear ver"
+          onClick={filterCountries}
         />
       </div>
       <button onClick={filterCountries} className={styles.containerFilter}>
