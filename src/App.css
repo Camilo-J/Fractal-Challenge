@@ -10,7 +10,8 @@
   display: none;
   position: fixed;
   width: 45px;
-  left: 0.4rem;
+  top: 0;
+  /* left: 0.4rem; */
   margin-top: 0.5rem;
   align-self: flex-start;
   cursor: pointer;
