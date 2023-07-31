@@ -26,3 +26,28 @@ export function searchCountries(
   );
   return filteredCountries;
 }
+
+export function sortCountries(
+  cleanAll: boolean,
+  clean: boolean,
+  params: string,
+  filter: string[]
+) {
+  if (cleanAll) return [];
+
+  if (clean) {
+    const filterData = params.split(" ");
+    const newFilter = filter.filter((item) => {
+      if (filterData.length === 1) return item !== params;
+      if (filterData.length === 2)
+        return item !== filterData[0] && item !== filterData[1];
+    });
+    return newFilter;
+  }
+
+  if (params.split(" ").length === 1) {
+    return [...filter, params];
+  } else {
+    return [...filter, ...params.split(" ")];
+  }
+}

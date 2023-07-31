@@ -6,7 +6,7 @@ import { useState } from "react";
 import { InfoCountry } from "../../components/infoCountry/infoCountry";
 import { useSearchParams } from "react-router-dom";
 import { Input } from "../../components/inputSearch/input";
-import { filterContinents, searchCountries } from "./helper";
+import { filterContinents, searchCountries, sortCountries } from "./helper";
 import { PaginationSection } from "../../components/pagination/pagination";
 import { GraphQLResponseCountries, Country } from "../../types/types";
 import { getNumberPages, paginateCountries } from "../../utils/utils";
@@ -48,28 +48,10 @@ export function Countries() {
   };
 
   function filters(params: string, clean: boolean, cleanAll: boolean) {
-    if (cleanAll) {
-      setFilter([]);
-      return;
-    }
-
-    if (clean) {
-      const filterData = params.split(" ");
-      const newFilter = filter.filter((item) => {
-        if (filterData.length === 1) return item !== params;
-        if (filterData.length === 2)
-          return item !== filterData[0] && item !== filterData[1];
-      });
-      setFilter(newFilter);
-      return;
-    }
-
-    if (params.split(" ").length === 1) {
-      setFilter([...filter, params]);
-    } else {
-      setFilter([...filter, ...params.split(" ")]);
-    }
+    const result = sortCountries(cleanAll, clean, params, filter);
+    setFilter(result);
   }
+
   return (
     <section className={styles.wrapped}>
       <Input onFilters={filters} />
