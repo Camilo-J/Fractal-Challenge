@@ -1,27 +1,32 @@
-# React + TypeScript + Vite
+# Fractal Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este reto tecnico fue realizado con React, Apollo Client y Css modules. Las APIs usadas fueron de [GraphQL](https://countries.trevorblades.com/) y [REST](https://pixabay.com/api/docs/)(Pixabay).
 
-Currently, two official plugins are available:
+## Requerimientos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requisitos Técnicos:
 
-## Expanding the ESLint configuration
+- Utilizar un framework de JavaScript moderno, preferiblemente Vue 2 Options API o Vue Composition API, pero también son válidos Vue 3, React, Angular, etc.
+- Emplear Apollo Client (o una biblioteca similar) para realizar solicitudes GraphQL al API proporcionado.
+- Implementar routing adecuado para la navegación entre las vistas de los países y la barra de búsqueda.
+- Utilizar alguna biblioteca o método para hacer la interfaz responsive y adaptable a diferentes tamaños de pantalla.
+- Utilizar alguna API (GraphQL o REST) para obtener imágenes correspondientes a cada país, ya que el API GraphQL provisto no ofrece esta funcionalidad.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Diseño
 
-- Configure the top-level `parserOptions` property like this:
+El diseño de la aplicación consta de las siguientes secciones:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Sidebar: Mostrará una lista de ítems. Únicamente el primer ítem (lista de países) será
+  funcional para este reto. Los demás ítems pueden tener contenido simple para demostrar el
+  routing adecuado.
+- Main Content: Contendrá una barra de búsqueda para buscar países por nombre y una sección
+  para mostrar el país seleccionado y sus detalles, como su nombre, capital, idioma, moneda y
+  estados (si están disponibles).
+- Filtrado por continente: Al hacer clic en la barra de búsqueda, se desplegará un menú para
+  filtrar los países por continente, como se muestra en los diseños adjuntos.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Imágenes de los Países:
+
+Debido a que el API GraphQL no proporciona imágenes para los países, se debe utilizar otra API
+(GraphQL o REST) que ofrezca imágenes. Se recomienda el uso de Pixabay o Unsplash para obtener
+imágenes correspondientes a cada país.
