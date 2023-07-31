@@ -42,3 +42,18 @@
     min-width: 1230px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .wrapped {
+    margin-top: 2.5rem;
+  }
+  .countriesContainer {
+    margin-left: 0.5rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .countriesContainer {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+}

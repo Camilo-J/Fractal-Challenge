@@ -10,7 +10,9 @@
 
 .paginationContainer__button {
   all: unset;
-  border-radius: 1rem;
+  width: 20px;
+  text-align: center;
+  border-radius: 0.5rem;
   background-color: #009cff;
   padding: 0.2rem 0.6rem;
   cursor: pointer;
