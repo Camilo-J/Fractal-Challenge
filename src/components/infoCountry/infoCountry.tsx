@@ -62,9 +62,6 @@ export function InfoCountry() {
             <span>{data?.country.languages[0]?.name ?? "----"}</span>
           </p>
           <p className={styles.cardContent__p}>
-            Population: &nbsp;<span>500k People</span>
-          </p>
-          <p className={styles.cardContent__p}>
             Currency: &nbsp; &nbsp;
             <span>
               {data?.country.currencies[0] ?? "----"},
@@ -74,10 +71,10 @@ export function InfoCountry() {
           <div className={styles.containerRegion}>
             <p className={styles.cardContent__p}>Region:</p>
             <div className={styles.containerRegion__regions}>
-              <p>{data?.country?.states[0]?.name ?? "No Region"}</p>
-              <p>{data?.country?.states[1]?.name ?? "No Region"}</p>
-              <p>{data?.country?.states[2]?.name ?? "No Region"}</p>
-              <p>{data?.country?.states[3]?.name ?? "No Region"}</p>
+              <p>{data?.country?.states[0]?.name ?? "----"}</p>
+              <p>{data?.country?.states[1]?.name ?? "----"}</p>
+              <p>{data?.country?.states[2]?.name ?? "----"}</p>
+              <p>{data?.country?.states[3]?.name ?? "----"}</p>
             </div>
           </div>
         </div>
