@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FilterOption } from "./filterOption";
-import styles from "./style.module.css";
 import { FilterProps } from "../../types/types";
 import oceania from "../../../public/oceania.png";
 import america from "../../../public/america.jpg";
@@ -18,12 +17,14 @@ export function Filter({ onFilters }: FilterProps) {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.container__header}>
+    <div className="absolute top-20 left-0 p-4 w-full rounded-3xl bg-white shadow-md sm:top-24">
+      <div className="text-gray-400 flex justify-between sm:text-xl">
         <p>Filtrar por continentes</p>
-        <button onClick={onCleaned}>Limpiar</button>
+        <button onClick={onCleaned} className="text-sky-400 font-medium">
+          Limpiar
+        </button>
       </div>
-      <div className={styles.container__content}>
+      <div className="my-4 flex flex-wrap gap-6 justify-center">
         <FilterOption
           onFilters={onFilters}
           clean={cleanFilters}

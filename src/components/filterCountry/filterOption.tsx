@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "./filterOption.module.css";
 import { FilterOptionProps, FilterOptionState } from "../../types/types";
 
 export function FilterOption({
@@ -31,13 +30,17 @@ export function FilterOption({
 
   return (
     <div
-      className={`${styles.containerContinent} ${
-        selected ? styles.checked : ""
-      }`}
+      className={` w-28 rounded-xl ${
+        selected ? "filterChecked" : ""
+      } sm:w-36 md:w-48`}
       onClick={onSelected}
     >
-      <img src={image || ""} alt="continent" />
-      <p>{name}</p>
+      <img
+        className="w-full h-20 mb-1 object-cover rounded-xl sm:h-24 md:h-32"
+        src={image || ""}
+        alt="continent"
+      />
+      <p className="text-gray-400 text-sm sm:text-base">{name}</p>
     </div>
   );
 }

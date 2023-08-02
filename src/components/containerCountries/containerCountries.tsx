@@ -7,7 +7,6 @@ import {
 } from "../../utils/utils";
 import { CardCountry } from "../cardCountry/country";
 import { PaginationSection } from "../pagination/pagination";
-import styles from "./style.module.css";
 import { gql, useQuery } from "@apollo/client";
 
 const GET_COUNTRIES = gql`
@@ -40,8 +39,8 @@ export function ContainerCountries({
   const newdata = paginateCountries(data);
 
   return (
-    <>
-      <div className={styles.countriesContainer}>
+    <div className="p-4">
+      <div className="my-4 grid auto-cols-fr gap-5 place-items-center sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
         {newdata &&
           newdata[page]?.map(({ code, name, continent }: Country) => (
             <CardCountry
@@ -57,6 +56,6 @@ export function ContainerCountries({
         pageNumber={pageNumber}
         page={page}
       />
-    </>
+    </div>
   );
 }
