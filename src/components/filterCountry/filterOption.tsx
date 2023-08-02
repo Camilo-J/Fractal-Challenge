@@ -30,7 +30,7 @@ export function FilterOption({
 
   return (
     <div
-      className={` w-28 rounded-xl ${
+      className={` w-28 rounded-xl cursor-pointer ${
         selected ? "filterChecked" : ""
       } sm:w-36 md:w-48`}
       onClick={onSelected}
