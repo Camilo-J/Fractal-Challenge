@@ -13,7 +13,7 @@ function App() {
     setOpen(!open);
   }
   return (
-    <section className="container bg-blue-150 w-full xl:flex 2xl:max-w-full">
+    <section className="container bg-blue-150 w-full sm:max-w-full xl:flex">
       <div className="fixed top-0 w-full p-1 z-40 bg-black/750 bg-gray-500/50 backdrop-blur-2xl xl:hidden">
         <img onClick={handleOpen} className="w-12" src={navbarIcon} alt="" />
       </div>
