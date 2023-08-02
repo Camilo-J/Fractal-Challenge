@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { gql, useQuery } from "@apollo/client";
 import { CardCountry } from "../../components/cardCountry/country";
-import styles from "./style.module.css";
 import { useState } from "react";
 import { InfoCountry } from "../../components/infoCountry/infoCountry";
 import { useSearchParams } from "react-router-dom";
@@ -53,10 +52,10 @@ export function Countries() {
   }
 
   return (
-    <section className={styles.wrapped}>
+    <section className="flex flex-col gap-5 items-center p-8 min-h-screen">
       <Input onFilters={filters} />
-      <div className={styles.mainContainer}>
-        <div className={styles.countriesContainer}>
+      <div className="w-full lg:mt-6 xl:flex">
+        <div className="grid auto-cols-fr gap-5 place-items-center sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 xl:grid-cols-auto-fit xl:w-full ">
           {newdata &&
             newdata[page]?.map(({ code, name, continent }: Country) => (
               <CardCountry
