@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import styles from "./style.module.css";
 import { getPhotoCountry } from "../../services/pixabay";
 import { useSearchParams } from "react-router-dom";
 import { CardCountryProps } from "../../types/types";
@@ -41,21 +40,28 @@ export function CardCountry({ code, name, continent }: CardCountryProps) {
   }
 
   return (
-    <div onClick={showInfo} className={styles.cardContainer}>
+    <div
+      onClick={showInfo}
+      className="bg-white w-72 rounded-3xl cursor-pointer sm:w-64 sm:h-64 md:w-full md:h-72 xl:max-w-xs"
+    >
       <img
-        className={styles.mainImage}
+        className="rounded-t-3xl w-full h-40 object-cover sm:h-36 md:h-40"
         src={images.country || countryImage.country}
-        alt=""
+        alt="country's landscape"
       />
-      <div className={styles.cardBody}>
+      <div className="flex gap-4 p-3">
         <img
-          className={styles.cardBody__Flag}
+          className="w-20 h-14 object-cover sm:h-12 md:h-16 md:w-24"
           src={images.flag || countryImage.flag}
           alt=""
         />
-        <div className={styles.cardBody__content}>
-          <h3>{name}</h3>
-          <p>{continent?.name}</p>
+        <div className="flex flex-col gap-2 ">
+          <h3 className="text-sky-450 text-xl font-semibold sm:text-lg md:text-xl">
+            {name}
+          </h3>
+          <p className="text-gray-400 text-lg sm:text-base md:text-lg">
+            {continent?.name}
+          </p>
         </div>
       </div>
     </div>

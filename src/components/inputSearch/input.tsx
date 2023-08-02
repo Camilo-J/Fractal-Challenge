@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import styles from "./style.module.css";
 import search from "../../../public/search.svg";
 import filterImage from "../../../public/filter.svg";
 import { useSearchParams } from "react-router-dom";
@@ -21,15 +20,13 @@ export function Input({ onFilters }: InputProps) {
   }
 
   return (
-    <div className={styles.inputContainer}>
-      <div className={styles.inputContainer__content}>
-        <label
-          className={styles.inputContainer__content__title}
-          htmlFor="country"
-        >
+    <div className="relative flex justify-between py-2 px-3 bg-white w-full rounded-3xl sm:px-4 sm:py-2.5 md:max-w-2xl">
+      <div className="w-28 sm:w-56">
+        <label className="text-gray-400 text-xl sm:text-2xl" htmlFor="country">
           Pais
         </label>
         <input
+          className="text-gray-400 w-full h-6 py-1 bg-white focus:outline-none"
           type="text"
           id="country"
           name="country"
@@ -39,14 +36,14 @@ export function Input({ onFilters }: InputProps) {
           onClick={filterCountries}
         />
       </div>
-      <button onClick={filterCountries} className={styles.containerFilter}>
-        <img className={styles.filterIcon} src={filterImage} alt="" />
+      <button onClick={filterCountries} className="cursor-pointer">
+        <img className="w-6 sm:w-8" src={filterImage} alt="" />
       </button>
       <button
-        className={styles.inputContainer__button}
+        className="bg-sky-450 px-3 flex justify-between items-center gap-3 rounded-3xl text-white font-medium sm:w-32 sm:text-xl sm:justify-around"
         onClick={searchCountries}
       >
-        <img className={styles.button__icon} src={search} alt="" />
+        <img className="w-5 sm:w-7" src={search} alt="icon-search" />
         Buscar
       </button>
       {filter && <Filter onFilters={onFilters} />}
